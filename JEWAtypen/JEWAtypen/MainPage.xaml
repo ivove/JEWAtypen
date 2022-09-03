@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JEWAtypen.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            VerticalOptions="Center"  Spacing="10">
+            <Grid ColumnDefinitions="*,150">
+                <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                    <Label
+                        Text="Tijd: "
+                        FontAttributes="Bold"/>
+                    <Label 
+                        x:Name="Time"
+                        Text="{Binding Time}"/>
+                </HorizontalStackLayout>
+            </Grid>
+            <Editor 
+                x:Name="text" 
+                IsReadOnly="true"
+                HeightRequest="250"
+                Text="{Binding OriginalText}"/>
+
+            <Editor 
+                x:Name="editor" 
+                Placeholder="Enter your response here"
+                HeightRequest="250" 
+                IsTextPredictionEnabled="False" 
+                IsSpellCheckEnabled="False"
+                TextChanged="editor_TextChanged"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
